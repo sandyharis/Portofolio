@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haris Sandy Setiawan - Portofolio Dalam Dinamika</title>
+    <meta name="description" content="Website Portofolio Personal Haris Sandy Setiawan - Vibes Perunggu, Designer & Vibe Coder Gen Z.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b090a',
+                        darkCard: '#161214',
+                        amberPerunggu: '#d97706',
+                        copperPerunggu: '#b45309',
+                        bronzeAccent: '#f59e0b',
+                        creamPaper: '#fef3c7',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles for 3D Lanyard Card & Vintage Rock Vibes -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;700&display=swap');
+
+        body {
+            background-color: #0b090a;
+    <title>Haris Sandy Setiawan - Portfolio</title>
+    <meta name="description" content="Website Portofolio Personal Haris Sandy Setiawan - Designer & Vibe Coder Gen Z dari UIN Sunan Ampel Surabaya.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#050a14',
+                        darkCard: '#0a1224',
+                        accentBlue: '#2563eb',
+                        accentCyan: '#06b6d4',
+                        accentSky: '#38bdf8',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles for 3D Lanyard Card & Smooth Effects -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            background-color: #050a14;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-image: radial-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* 3D Perspective Box */
+        .perspective-container {
+            perspective: 1000px;
+        }
+
+        .lanyard-physics-node {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.15s ease-out;
+        }
+
+        /* 3D Card Container */
+        .card-inner {
+            position: relative;
+            width: 310px;
+            height: 480px;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-inner.flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Card Sides */
+        .card-front, .card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(6, 182, 212, 0.2), 0 10px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Metallic Lanyard Clip */
+        .lanyard-clip-box {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 24px;
+            background: linear-gradient(135deg, #38bdf8 0%, #1e40af 50%, #0f172a 100%);
+            border-radius: 6px;
+            z-index: 25;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+        }
+
+        .lanyard-clip-hole {
+            width: 16px;
+            height: 6px;
+            background: #050a14;
+            border-radius: 10px;
+            margin: 4px auto 0 auto;
+        }
+
+        /* Lanyard Strap Line - Perfectly Attached to physics node */
+        .lanyard-strap {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 220px;
+            background: linear-gradient(to bottom, transparent 0%, #1e3a8a 20%, #0284c7 80%, #1e40af 100%);
+            border-left: 2px dashed #38bdf8;
+            border-right: 2px dashed #38bdf8;
+            z-index: 4;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.6);
+            margin-bottom: -10px;
+            pointer-events: none;
+        }
+
+        /* Glow Border Blue/Cyan */
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.5), rgba(37, 99, 235, 0.3), transparent);
+            border-radius: 20px;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Navbar Navigation -->
+    <nav class="w-full max-w-7xl mx-auto px-6 py-5 flex items-center justify-between border-b border-blue-900/30">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center font-black text-white text-lg shadow-lg shadow-cyan-500/20">
+                H
+            </div>
+            <span class="font-bold text-white text-lg tracking-tight">Haris | <span class="text-cyan-400">Portfolio</span></span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+            <a href="#about" class="hover:text-cyan-400 transition-colors">Tentang Saya</a>
+            <a href="#education" class="hover:text-cyan-400 transition-colors">Pendidikan</a>
+            <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills & Tools</a>
+            <a href="#projects" class="hover:text-cyan-400 transition-colors">Proyek</a>
+            <a href="#contact" class="hover:text-cyan-400 transition-colors">Kontak</a>
+        </div>
+
+        <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-xs hover:from-blue-500 hover:to-cyan-400 transition-all shadow-lg shadow-cyan-500/20">
+            Hubungi Saya
+        </a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="w-full max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+        
+        <!-- Left Hero Details Column -->
+        <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Student Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Mahasiswa Aktif UIN Sunan Ampel Surabaya
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                Haloo, saya Haris <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">Welcome to My Portfolio.</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="text-lg font-medium text-cyan-400/90 italic">
+                &ldquo;Haris &ndash; Designer & Vibe Coder Gen Z&rdquo;
+            </p>
+
+            <!-- Description -->
+            <p class="text-gray-400 leading-relaxed text-base max-w-2xl">
+                Aktif mengeksplorasi berbagai proyek kreatif yang terinspirasi dari dinamika tren platform digital. Wadah yang tepat bagi saya untuk terus mengasah dan mengembangkan potensi di bidang desain grafis, visual UI/UX, dan pemrograman web modern.
+            </p>
+
+            <!-- Action Tags / Pills -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+                <span class="px-4 py-2 rounded-xl bg-blue-950/40 border border-blue-900/60 text-cyan-200 text-xs font-medium flex items-center gap-2 hover:border-cyan-500/50 transition-colors">
+                    🎨 Graphic Design & Visuals
+                </span>
+                <span class="px-4 py-2 rounded-xl bg-blue-950/40 border border-blue-900/60 text-cyan-200 text-xs font-medium flex items-center gap-2 hover:border-cyan-500/50 transition-colors">
+                    💻 IT & Vibe Coding
+                </span>
+                <span class="px-4 py-2 rounded-xl bg-blue-950/40 border border-blue-900/60 text-cyan-200 text-xs font-medium flex items-center gap-2 hover:border-cyan-500/50 transition-colors">
+                    🚀 Web Explorer
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Right Interactive Lanyard Card Column -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[520px]">
+            
+            <div class="mb-4 text-center">
+                <span class="text-xs font-medium text-cyan-400 bg-blue-950/80 px-3.5 py-1.5 rounded-full border border-cyan-500/30 inline-flex items-center gap-1.5 shadow-md">
+                    <i data-lucide="mouse-pointer" class="w-3.5 h-3.5"></i>
+                    Arahkan mouse atau sentuh untuk efek 3D
+                </span>
+            </div>
+
+            <!-- Outer Perspective Box -->
+            <div class="perspective-container select-none relative pt-10" id="lanyardContainer">
+                
+                <!-- 3D Physics Card Node -->
+                <div class="lanyard-physics-node" id="lanyardPhysicsNode">
+                    
+                    <!-- Integrated Strap -->
+                    <div class="lanyard-strap"></div>
+
+                    <!-- Metallic Clip -->
+                    <div class="lanyard-clip-box">
+                        <div class="lanyard-clip-hole"></div>
+                    </div>
+
+                    <!-- 3D Flippable Card -->
+                    <div class="card-inner glow-border" id="cardInner">
+                        
+                        <!-- CARD FRONT -->
+                        <div class="card-front bg-gradient-to-b from-slate-900 via-darkCard to-black border border-blue-900/60 p-5 flex flex-col justify-between text-white">
+                            
+                            <div>
+                                <div class="flex items-center justify-between border-b border-blue-900/50 pb-3 mb-4">
+                                    <div class="flex items-center gap-1.5">
+                                        <div class="w-6 h-6 rounded bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center text-white font-black text-xs shadow-sm">
+                                            H
+                                        </div>
+                                        <span class="text-[10px] font-bold tracking-wider text-cyan-300 uppercase">KARTU TANDA MAHASISWA</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                                        VERIFIED
+                                    </span>
+                                </div>
+
+                                <!-- Photo Frame with User's Photo -->
+                                <div class="relative w-full h-56 rounded-xl overflow-hidden border border-blue-900/60 shadow-inner group bg-slate-950 flex items-center justify-center">
+                                    <img id="userAvatarImg" src="WhatsApp Image 2026-11-05 at 22.43.25.jpg" 
+                                         alt="Haris Sandy Setiawan" 
+                                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                                    
+                                    <div class="absolute bottom-3 left-3 right-3">
+                                        <span class="px-2.5 py-0.5 bg-cyan-500 text-darkBg text-[10px] font-extrabold uppercase rounded tracking-wider inline-block mb-1">
+                                            HARIS SANDY S.
+                                        </span>
+                                        <h3 class="text-sm font-bold text-white tracking-wide leading-tight">
+                                            UIN SUNAN AMPEL SURABAYA
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Card Details -->
+                            <div class="mt-4 space-y-2">
+                                <div class="border-t border-blue-900/40 pt-3 flex items-center justify-between text-xs">
+                                    <div>
+                                        <p class="text-[10px] text-gray-500 uppercase font-semibold">Nama Lengkap</p>
+                                        <p class="font-bold text-gray-200">HARIS SANDY SETIAWAN</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-[10px] text-gray-500 uppercase font-semibold">Status</p>
+                                        <p class="font-semibold text-cyan-400">Aktif Gen Z</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between items-center bg-blue-950/40 p-2.5 rounded-lg border border-blue-900/40">
+                                    <span class="text-[10px] text-cyan-400 font-mono">ID: UINSA-2026-HSS</span>
+                                    <span class="text-[10px] text-gray-300 font-medium">UIN Sunan Ampel</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- CARD BACK -->
+                        <div class="card-back bg-gradient-to-b from-slate-900 via-darkCard to-black border border-blue-900/60 p-5 flex flex-col justify-between text-white">
+                            
+                            <div class="text-center border-b border-blue-900/40 pb-3">
+                                <h4 class="text-xs font-bold text-cyan-400 tracking-widest uppercase">KARTU AKSES PORTOFOLIO</h4>
+                                <p class="text-[10px] text-gray-400">Scan QR untuk membuka kontak cepat</p>
+                            </div>
+
+                            <div class="my-auto flex flex-col items-center justify-center space-y-3">
+                                <div class="p-3 bg-white rounded-xl shadow-lg border-2 border-cyan-400">
+                                    <svg class="w-32 h-32 text-darkBg" viewBox="0 0 100 100" fill="currentColor">
+                                        <path d="M0,0 h30 v30 h-30 z M10,10 h10 v10 h-10 z M70,0 h30 v30 h-30 z M80,10 h10 v10 h-10 z M0,70 h30 v30 h-30 z M10,80 h10 v10 h-10 z M40,0 h10 v20 h-10 z M55,10 h10 v10 h-10 z M40,30 h20 v10 h-20 z M0,40 h10 v20 h-10 z M20,40 h20 v10 h-20 z M50,50 h10 v10 h-10 z M70,40 h30 v10 h-30 z M70,60 h10 v10 h-10 z M90,60 h10 v30 h-10 z M40,70 h20 v10 h-20 z M60,80 h20 v20 h-20 z M30,90 h10 v10 h-10 z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-[11px] font-mono text-cyan-300">CONNECT • DESIGN • CODE</span>
+                            </div>
+
+                            <div class="space-y-2 border-t border-blue-900/40 pt-3 text-[10px] text-gray-400">
+                                <div class="flex justify-between">
+                                    <span>Instansi:</span>
+                                    <span class="text-gray-200 font-semibold">UIN Sunan Ampel Surabaya</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Bidang:</span>
+                                    <span class="text-cyan-400 font-semibold">Web &amp; Visual Design</span>
+                                </div>
+                                <div class="text-center pt-1 text-cyan-400 font-semibold">
+                                    &copy; 2026 Haris Sandy Setiawan
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flip Card Button -->
+            <button id="flipBtn" class="mt-6 px-5 py-2.5 rounded-full bg-slate-900 border border-blue-900/60 hover:border-cyan-500 text-gray-300 text-xs font-semibold transition-all flex items-center gap-2 hover:text-cyan-400 shadow-lg">
+                <i data-lucide="rotate-3d" class="w-4 h-4 text-cyan-400"></i>
+                <span>Putar Balik Kartu (3D Flip)</span>
+            </button>
+
+        </div>
+    </main>
+
+    <footer class="w-full text-center py-6 border-t border-blue-900/30 text-gray-500 text-xs">
+        &copy; 2026 Haris Sandy Setiawan. All rights reserved.
+    </footer>
+
+    <!-- Clean Hover 3D & Flip Script -->
+    <script>
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        const container = document.getElementById('lanyardContainer');
+        const physicsNode = document.getElementById('lanyardPhysicsNode');
+        const cardInner = document.getElementById('cardInner');
+        const flipBtn = document.getElementById('flipBtn');
+
+        let isFlipped = false;
+
+        // Mouse hover tilt animation
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const rotateX = (-y / rect.height) * 30;
+            const rotateY = (x / rect.width) * 30;
+
+            physicsNode.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            physicsNode.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+
+        // Flip Card
+        flipBtn.addEventListener('click', () => {
+            isFlipped = !isFlipped;
+            cardInner.classList.toggle('flipped', isFlipped);
+        });
+    </script>
+</body>
+</html>
